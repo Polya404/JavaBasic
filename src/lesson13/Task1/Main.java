@@ -10,7 +10,7 @@ public class Main {
         definition("document");
     }
 
-    public static void definition(String doc){
+    private static void definition(String doc){
         if (doc.endsWith(".xml") || doc.endsWith(".jpeg"))
         {
             System.out.println("This is a XML document!");
@@ -35,7 +35,7 @@ public class Main {
         }
     }
 
-    public static void redactor(AbstractHandler doc){
+    private static void redactor(AbstractHandler doc){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Write what you want do: open, create, change, save");
         String action = scanner.nextLine();
