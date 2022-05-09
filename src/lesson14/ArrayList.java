@@ -1,9 +1,9 @@
 package lesson14;
 
-public interface ArrayList {
+public interface ArrayList<T> {
     int size();
-    void add(int number);
+    void add(T number);
     void remove(int index);
     void clear();
-    int get(int index);
+    T get(int index);
 }

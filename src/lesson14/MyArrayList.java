@@ -2,10 +2,10 @@ package lesson14;
 
 import java.util.Arrays;
 
-public class MyArrayList implements ArrayList {
-    private int[] arr = new int[1];
+public class MyArrayList<T> implements ArrayList<T> {
+    private Object[] arr = new Object[0];
     private int size = 0;
-    private int capacity = 1;
+    private int capacity = 0;
 
     @Override
     public String toString() {
@@ -14,22 +14,20 @@ public class MyArrayList implements ArrayList {
                 '}';
     }
 
-
     @Override
-    public void add(int number) {
+    public void add(T variable) {
         if (size == capacity) {
             grow();
         }
-
-            arr[size] = number;
+        if (variable != null) {
+            arr[size] = variable;
             size++;
-
+        }
     }
 
     private void grow() {
-        capacity = (int) (capacity * 1.5);
+        capacity = capacity + 1;
         arr = Arrays.copyOf(arr, capacity);
-
     }
 
     @Override
@@ -37,19 +35,22 @@ public class MyArrayList implements ArrayList {
         return size;
     }
 
-
     @Override
     public void remove(int index) {
-
+        System.arraycopy(arr, index + 1, arr, index, size - index - 1);
+        arr = Arrays.copyOf(arr, size - 1);
+        size -= 1;
     }
 
     @Override
     public void clear() {
-
+        arr = new Object[0];
+        size = 0;
+        capacity = 0;
     }
 
     @Override
-    public int get(int index) {
-        return 0;
+    public T get(int index) {
+        return (T) arr[index];
     }
 }
