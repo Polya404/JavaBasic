@@ -7,18 +7,21 @@ public class Arr {
     public static void main(String[] args) {
         System.out.println(maxArr(arr()));
         System.out.println(minArr(arr()));
+        for (int i : arr()) {
+            System.out.print(i + " ");
+        }
     }
 
-    static int[] arr() {
+    private static int[] arr() {
         Random r = new Random();
-        int[] array = new int[20];
+        int[] array = new int[10];
         for (int a = 0; a < array.length; a++) {
             array[a] = r.nextInt(-10, 11);
         }
         return array;
     }
 
-    static int maxArr(int[] array) {
+    private static int maxArr(int[] array) {
         int count = 0;
         int max = array[0];
         for (int i : array) {
@@ -34,7 +37,7 @@ public class Arr {
         return count;
     }
 
-    static int minArr(int[] array) {
+    private static int minArr(int[] array) {
         int count = 0;
         int min = array[0];
         for (int i : array) {
