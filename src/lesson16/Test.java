@@ -1,6 +1,6 @@
 package lesson16;
 
-interface AbleToEat{
+interface AbleToEat {
     public void eat();
 }
 
