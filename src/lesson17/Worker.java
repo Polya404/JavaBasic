@@ -76,9 +76,9 @@ public class Worker {
             int searchingWorkLength = scanner.nextInt();
             System.out.println("Работники со стажем " + searchingWorkLength + " и более:");
             int foundCount = 0;
-            for (int i = 0; i < workers.length; i++) {
-                if (workers[i].getWorkLength() >= searchingWorkLength) {
-                    System.out.println(workers[i]);
+            for (Worker worker : workers) {
+                if (worker.getWorkLength() >= searchingWorkLength) {
+                    System.out.println(worker);
                     foundCount++;
                 }
             }
