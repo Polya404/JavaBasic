@@ -39,9 +39,8 @@ public class DeMorganTheoremes {
     }
 
     public static void pow2() {
-        // с каждым сдвигом число умножается на 2
         for (int i = 0; i < 10; i++) {
-            System.out.println((i + 1) + " степень двойки = " + (2 << i)); // два умножаем на 2 в степени i
+            System.out.println((i + 1) + " степень двойки = " + (2 << i));
         }
     }
 
@@ -49,10 +48,6 @@ public class DeMorganTheoremes {
         int a = 5;
         int b = 3;
         a = b;
-        // вначале 3 + 3, затем операция 3 "и" 3,
-        // что дает в результате побитовго сравнения
-        // нам 2 и добавляем переменную а, которая равна 3
-        // получаем 5
         b = (a & b + b) + a;
 
         System.out.println("a = " + a + "\nb = " + b);
